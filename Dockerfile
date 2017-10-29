@@ -3,7 +3,7 @@ FROM resin/rpi-raspbian:wheezy
 MAINTAINER Govinda fichtner <govinda@hypriot.com>
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
-RUN groupadd -r mysql && useradd -r -g mysql mysql
+RUN groupadd -g 66 mysql && useradd -u 66 -g mysql mysql
 
 # FATAL ERROR: please install the following Perl modules before executing /usr/local/mysql/scripts/mysql_install_db:
 # File::Basename
